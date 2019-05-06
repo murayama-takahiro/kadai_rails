@@ -1,0 +1,17 @@
+<%= form_with(model: @twee,local: true, url: choose_new_or_edit) do |form| %>
+  <% if @twee.errors.any? %>
+    <div class="error_explanation">
+      <p><%= @twee.errors.count %>件のエラーがあります</p>
+      <ul>
+        <% @twee.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div id="twee_content">
+      <%= form.label :content %>
+      <%= form.text_field :content %>
+    </div>
+  <%= form.submit %>
+<% end %>

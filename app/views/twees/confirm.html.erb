@@ -1,0 +1,11 @@
+<p>以下の内容で、送信する</p>
+<%= form_with(model: @twee,local: true,url: twees_path) do |form| %>
+  <%= form.hidden_field :content %>
+  <p>つぶやき<%= @twee.content %></p>
+  <%= form.submit "登録する"%>
+<% end %>
+
+<%= form_with(model: @twee,local: true,url: new_twee_path, method: :get) do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "戻る",name: "back"%>
+<% end %>
